@@ -91,9 +91,9 @@ Alternatively, you can use the included Web Component wrapper, which uses [Custo
 The element picks up the text provided inside of the element's body, responds to changing the `language` attribute and property, and lets you customize the highlighting colors via CSS Custom Properties:
 
 ```html
-<script src="bower_components/prism/prism.js"></script>
-<script src="bower_components/prism/components/prism-markdown.js"></script>
-<link rel="import" href="bower_components/codeflask-editor/src/codeflask-editor.html">
+<script src="node_modules/prismjs/prism.js"></script>
+<script src="node_modules/prismjs/components/prism-markdown.js"></script>
+<script type="module" src="node_modules/codeflask-editor/src/codeflask-editor.js"></script>
 <style>
   codeflask-editor {
     height: 90vh;
@@ -106,7 +106,7 @@ The element picks up the text provided inside of the element's body, responds to
 # hello world
 Initial text here.
 </codeflask-editor>
-<script>
+<script defer>
   document.querySelector('codeflask-editor').addEventListener('value-changed', console.log)
 </script>
 ```
@@ -115,13 +115,6 @@ The element emits a `value-changed` event on content changes, which makes it com
 
 ```html
 <codeflask-editor language="{{lang}}" value="{{code}}"></codeflask-editor>
-```
-
-Instead of the HTML Import, you can include the scripts directly:
-
-```html
-<script src="codeflask.js"></script>
-<script src="codeflask-editor.js"></script>
 ```
 
 #### Listening for changes and updating your editor

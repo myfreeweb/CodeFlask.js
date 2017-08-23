@@ -1,6 +1,6 @@
-const codeFlaskOwnerDoc = document.currentScript.ownerDocument
+import './codeflask.js';
 
-class CodeflaskEditor extends HTMLElement {
+export default class CodeflaskEditor extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
